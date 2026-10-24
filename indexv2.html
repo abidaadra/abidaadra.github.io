@@ -1,0 +1,1622 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0a0d0b">
+
+  <title>Abida Adra | IT Professional & Cybersecurity Enthusiast</title>
+
+  <meta
+    name="description"
+    content="The personal portfolio of Abida Adra — IT professional, cybersecurity enthusiast, developer, chess player, and cuber."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  >
+
+  <style>
+    :root {
+      --bg: #0a0d0b;
+      --bg-secondary: #101511;
+      --surface: #141a15;
+      --surface-hover: #19221b;
+      --green: #9cff57;
+      --green-soft: #c2ff98;
+      --text: #e8eee8;
+      --muted: #929d93;
+      --border: rgba(156, 255, 87, 0.17);
+      --terminal: "Fira Code", monospace;
+      --body: "Inter", sans-serif;
+      --max-width: 1120px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      font-family: var(--body);
+      color: var(--text);
+      background:
+        radial-gradient(
+          ellipse at 80% 0%,
+          rgba(73, 125, 51, 0.10),
+          transparent 35%
+        ),
+        var(--bg);
+      line-height: 1.7;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.12;
+      background-image:
+        linear-gradient(rgba(156, 255, 87, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(156, 255, 87, 0.06) 1px, transparent 1px);
+      background-size: 42px 42px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button:focus-visible,
+    a:focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: 5px;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    .section-heading {
+      margin-bottom: 34px;
+    }
+
+    .eyebrow {
+      font-family: var(--terminal);
+      color: var(--green);
+      font-size: 0.78rem;
+      letter-spacing: 1px;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.25;
+      letter-spacing: -1px;
+    }
+
+    .section-description {
+      color: var(--muted);
+      max-width: 680px;
+      margin-top: 14px;
+    }
+
+    .highlight {
+      color: var(--green);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    /* Navigation */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(10, 13, 11, 0.88);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      font-family: var(--terminal);
+      font-size: 1.02rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .brand span {
+      color: var(--green);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 23px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-size: 0.82rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--green);
+      padding: 9px 12px;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    /* Hero */
+
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      padding: 92px 0 80px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr 0.75fr;
+      align-items: center;
+      gap: 60px;
+    }
+
+    .terminal-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--green);
+      background: rgba(156, 255, 87, 0.07);
+      border: 1px solid var(--border);
+      padding: 9px 14px;
+      border-radius: 6px;
+      font-family: var(--terminal);
+      font-size: 0.76rem;
+      margin-bottom: 25px;
+    }
+
+    .status-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 12px rgba(156, 255, 87, 0.65);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      line-height: 1.08;
+      letter-spacing: -3px;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 .name {
+      color: var(--green);
+    }
+
+    .hero-subtitle {
+      font-family: var(--terminal);
+      font-size: clamp(0.88rem, 2vw, 1.05rem);
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    .hero-description {
+      max-width: 600px;
+      color: #b3bdb4;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 7px;
+      padding: 12px 18px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      border: 1px solid var(--green);
+      transition: transform 0.2s, background 0.2s, color 0.2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #0b1008;
+    }
+
+    .btn-primary:hover {
+      background: var(--green-soft);
+    }
+
+    .btn-secondary {
+      color: var(--green);
+      background: transparent;
+    }
+
+    .btn-secondary:hover {
+      background: rgba(156, 255, 87, 0.08);
+    }
+
+    /* Terminal card */
+
+    .terminal {
+      background: rgba(16, 21, 17, 0.95);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.28);
+    }
+
+    .terminal-top {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 14px 16px;
+      background: #171e18;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .terminal-circle {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #3d493e;
+    }
+
+    .terminal-circle:first-child {
+      background: #ff6b6b;
+    }
+
+    .terminal-circle:nth-child(2) {
+      background: #ffd166;
+    }
+
+    .terminal-circle:nth-child(3) {
+      background: #9cff57;
+    }
+
+    .terminal-filename {
+      margin-left: auto;
+      font-family: var(--terminal);
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .terminal-body {
+      padding: 24px 20px;
+      font-family: var(--terminal);
+      font-size: 0.82rem;
+      overflow-wrap: anywhere;
+    }
+
+    .terminal-line {
+      margin-bottom: 13px;
+    }
+
+    .prompt {
+      color: var(--green);
+    }
+
+    .terminal-key {
+      color: #a5b3a7;
+    }
+
+    .terminal-value {
+      color: #e7eee7;
+    }
+
+    .terminal-comment {
+      color: #738074;
+    }
+
+    .terminal-divider {
+      height: 1px;
+      background: var(--border);
+      margin: 20px 0;
+    }
+
+    .terminal-status {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--green);
+      font-size: 0.74rem;
+    }
+
+    /* About and stats */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .about-copy p {
+      color: #b3bdb4;
+      margin-bottom: 17px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .stat {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 22px;
+      border-radius: 9px;
+      min-width: 0;
+    }
+
+    .stat strong {
+      display: block;
+      color: var(--green);
+      font-family: var(--terminal);
+      font-size: clamp(1.3rem, 3vw, 1.8rem);
+      margin-bottom: 7px;
+    }
+
+    .stat span {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    /* Cards */
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 25px;
+      transition: transform 0.22s, border-color 0.22s,
+        background 0.22s;
+      min-width: 0;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(156, 255, 87, 0.5);
+      background: var(--surface-hover);
+    }
+
+    .card-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 45px;
+      height: 45px;
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      color: var(--green);
+      background: rgba(156, 255, 87, 0.06);
+      font-size: 1.1rem;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      font-size: 1.03rem;
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .card-meta {
+      font-family: var(--terminal);
+      color: var(--green);
+      font-size: 0.72rem;
+      margin-bottom: 10px;
+    }
+
+    /* Education */
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .education-card {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .education-card .card-icon {
+      flex-shrink: 0;
+    }
+
+    .education-card h3 {
+      margin-bottom: 8px;
+    }
+
+    .education-card p {
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    /* Expertise */
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .skill-tag {
+      font-family: var(--terminal);
+      font-size: 0.75rem;
+      color: #c3d0c4;
+      background: #111712;
+      border: 1px solid var(--border);
+      padding: 8px 11px;
+      border-radius: 5px;
+    }
+
+    /* Projects */
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      min-height: 250px;
+    }
+
+    .project-card p {
+      margin-bottom: 18px;
+    }
+
+    .project-card .project-footer {
+      margin-top: auto;
+      padding-top: 15px;
+      color: var(--green);
+      font-family: var(--terminal);
+      font-size: 0.75rem;
+    }
+
+    .project-card .project-footer i {
+      margin-left: 5px;
+    }
+
+    /* Profiles */
+
+    .profiles-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 15px;
+    }
+
+    .profile-card {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 17px;
+      transition: transform 0.2s, border-color 0.2s,
+        background 0.2s;
+      min-width: 0;
+    }
+
+    .profile-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--green);
+      background: var(--surface-hover);
+    }
+
+    .profile-card i {
+      font-size: 1.4rem;
+      color: var(--green);
+      flex-shrink: 0;
+      width: 25px;
+      text-align: center;
+    }
+
+    .profile-card h3 {
+      font-size: 0.85rem;
+      overflow-wrap: anywhere;
+    }
+
+    .profile-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.7rem;
+      margin-top: 3px;
+    }
+
+    /* Interests */
+
+    .interests-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 15px;
+    }
+
+    .interest {
+      text-align: center;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 9px;
+      padding: 24px 12px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .interest:hover {
+      border-color: var(--green);
+      transform: translateY(-4px);
+    }
+
+    .interest i {
+      display: block;
+      color: var(--green);
+      font-size: 1.55rem;
+      margin-bottom: 12px;
+    }
+
+    .interest span {
+      font-size: 0.84rem;
+      color: #c7d0c8;
+    }
+
+    /* Contact */
+
+    .contact-panel {
+      text-align: center;
+      background:
+        radial-gradient(
+          ellipse at top,
+          rgba(156, 255, 87, 0.09),
+          transparent 70%
+        ),
+        var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 55px 25px;
+    }
+
+    .contact-panel h2 {
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      margin-bottom: 15px;
+    }
+
+    .contact-panel p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto 25px;
+    }
+
+    /* Footer */
+
+    .footer {
+      border-top: 1px solid var(--border);
+      padding: 28px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer p {
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .footer-socials {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .footer-socials a {
+      color: var(--muted);
+      font-size: 1.05rem;
+      transition: color 0.2s;
+    }
+
+    .footer-socials a:hover {
+      color: var(--green);
+    }
+
+    .back-to-top {
+      font-family: var(--terminal);
+      color: var(--green) !important;
+      font-size: 0.75rem !important;
+    }
+
+    /* Responsive */
+
+    @media (max-width: 950px) {
+      .hero-grid {
+        grid-template-columns: 1fr 0.85fr;
+        gap: 30px;
+      }
+
+      .cards-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .profiles-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nav-links {
+        gap: 14px;
+      }
+
+      .nav-links a {
+        font-size: 0.76rem;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .section {
+        padding: 70px 0;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 70px 0;
+      }
+
+      .hero-grid,
+      .about-grid,
+      .education-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 38px;
+      }
+
+      .hero h1 {
+        letter-spacing: -2px;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .nav-inner {
+        flex-wrap: wrap;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding-bottom: 6px;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        display: block;
+        padding: 12px 4px;
+        font-size: 0.9rem;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .interests-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 420px) {
+      .container {
+        width: min(100% - 28px, var(--max-width));
+      }
+
+      .stats {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .stat {
+        padding: 15px;
+      }
+
+      .profiles-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .profile-card {
+        padding: 15px;
+      }
+
+      .terminal-body {
+        padding: 20px 14px;
+        font-size: 0.73rem;
+      }
+
+      .contact-panel {
+        padding: 38px 18px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+
+<body id="top">
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#top" class="brand">
+        <span>~/</span>abida_adra
+      </a>
+
+      <button
+        class="menu-toggle"
+        id="menu-toggle"
+        type="button"
+        aria-label="Toggle navigation"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+
+      <nav aria-label="Main navigation">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#expertise">Expertise</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#profiles">Profiles</a></li>
+          <li><a href="#interests">Interests</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container hero-grid">
+
+        <div class="hero-content">
+          <div class="terminal-label">
+            <span class="status-dot"></span>
+            IT PROFESSIONAL / CYBERSECURITY ENTHUSIAST
+          </div>
+
+          <h1>
+            Hello, I'm<br>
+            <span class="name">Abida Adra.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            &lt; learn / build / explore / repeat &gt;
+          </p>
+
+          <p class="hero-description">
+            An IT professional with a background in computer science,
+            more than a decade of experience across IT and technical
+            fields, and a passion for cybersecurity, programming,
+            experimentation, and solving complex problems.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+              Explore My Work
+            </a>
+
+            <a href="#profiles" class="btn btn-secondary">
+              <i class="fa-solid fa-arrow-up-right-from-square"
+                 aria-hidden="true"></i>
+              Find Me Online
+            </a>
+          </div>
+        </div>
+
+        <div class="terminal" aria-label="Portfolio terminal introduction">
+          <div class="terminal-top">
+            <span class="terminal-circle"></span>
+            <span class="terminal-circle"></span>
+            <span class="terminal-circle"></span>
+            <span class="terminal-filename">about_me.sh</span>
+          </div>
+
+          <div class="terminal-body">
+            <p class="terminal-line">
+              <span class="prompt">abida@portfolio:~$</span> whoami
+            </p>
+
+            <p class="terminal-line terminal-value">
+              IT Professional &amp; Lifelong Learner
+            </p>
+
+            <p class="terminal-line">
+              <span class="prompt">abida@portfolio:~$</span> cat education.txt
+            </p>
+
+            <p class="terminal-line">
+              <span class="terminal-key">degree:</span>
+              <span class="terminal-value"> BSc Computer Science</span>
+            </p>
+
+            <p class="terminal-line">
+              <span class="terminal-key">diploma:</span>
+              <span class="terminal-value"> Information Technology</span>
+            </p>
+
+            <div class="terminal-divider"></div>
+
+            <p class="terminal-line">
+              <span class="prompt">abida@portfolio:~$</span> cat interests.txt
+            </p>
+
+            <p class="terminal-line terminal-value">
+              Cybersecurity, Development, Electronics, Chess, Cubing
+            </p>
+
+            <p class="terminal-line">
+              <span class="prompt">abida@portfolio:~$</span> uptime
+            </p>
+
+            <p class="terminal-line terminal-value">
+              10+ years of learning and building
+            </p>
+
+            <div class="terminal-divider"></div>
+
+            <div class="terminal-status">
+              <span class="status-dot"></span>
+              <span>ALWAYS EXPLORING SOMETHING NEW</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="section" id="about">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">// 01 — ABOUT ME</p>
+          <h2 class="section-title">A little about <span class="highlight">me.</span></h2>
+        </div>
+
+        <div class="about-grid">
+          <div class="about-copy">
+            <p>
+              I'm an IT professional with a <strong>Bachelor's degree
+              in Computer Science</strong> and a
+              <strong>Technical Diploma in Information Technology</strong>,
+              backed by more than <strong>10 years of experience</strong>
+              across IT and related technical fields.
+            </p>
+
+            <p>
+              My interests span cybersecurity, software development,
+              scripting, digital investigations, electronics, and
+              hands-on experimentation. I enjoy exploring how
+              technology works, building things myself, and continually
+              expanding my practical knowledge.
+            </p>
+
+            <p>
+              Outside technology, I enjoy chess, speedcubing, gaming,
+              manga art, and puzzles. For me, learning isn't limited
+              to one discipline — it's about curiosity, creativity,
+              and the satisfaction of solving a challenge.
+            </p>
+          </div>
+
+          <div class="stats">
+            <div class="stat">
+              <strong>10+</strong>
+              <span>Years in IT and technical fields</span>
+            </div>
+
+            <div class="stat">
+              <strong>BSc</strong>
+              <span>Computer Science</span>
+            </div>
+
+            <div class="stat">
+              <strong>IT</strong>
+              <span>Technical Diploma</span>
+            </div>
+
+            <div class="stat">
+              <strong>DIY</strong>
+              <span>Build, experiment, improve</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section class="section" id="education">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">// 02 — EDUCATION</p>
+          <h2 class="section-title">My educational <span class="highlight">background.</span></h2>
+          <p class="section-description">
+            The academic foundations behind my journey in information
+            technology, computing, and cybersecurity.
+          </p>
+        </div>
+
+        <div class="education-grid">
+
+          <article class="card education-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+            </div>
+
+            <div>
+              <p class="card-meta">UNIVERSITY EDUCATION</p>
+              <h3>Bachelor of Science in Computer Science</h3>
+              <p>
+                Academic background in computer science, computing
+                principles, programming, and software-related concepts.
+              </p>
+            </div>
+          </article>
+
+          <article class="card education-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+            </div>
+
+            <div>
+              <p class="card-meta">TECHNICAL EDUCATION</p>
+              <h3>Technical Diploma in Information Technology</h3>
+              <p>
+                Technical education supporting my foundation in IT
+                systems, computing, and practical technology skills.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- EXPERTISE -->
+    <section class="section" id="expertise">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">// 03 — AREAS OF INTEREST</p>
+          <h2 class="section-title">What I <span class="highlight">explore.</span></h2>
+          <p class="section-description">
+            A selection of the technical fields and disciplines that
+            interest me. These represent my areas of focus and exploration,
+            rather than a claim of mastery in every field.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+
+          <article class="card">
+            <div class="card-icon">
+              <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            </div>
+            <h3>Cybersecurity</h3>
+            <p>
+              Practical security learning, web security, vulnerability
+              research, CTF challenges, and defensive security concepts.
+            </p>
+            <div class="skill-list">
+              <span class="skill-tag">Web Security</span>
+              <span class="skill-tag">CTFs</span>
+              <span class="skill-tag">Malware Analysis</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+            </div>
+            <h3>Programming &amp; Development</h3>
+            <p>
+              Building software, writing scripts, experimenting with
+              development ideas, and turning concepts into working projects.
+            </p>
+            <div class="skill-list">
+              <span class="skill-tag">Scripting</span>
+              <span class="skill-tag">Web Development</span>
+              <span class="skill-tag">Automation</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">
+              <i class="fa-solid fa-brain" aria-hidden="true"></i>
+            </div>
+            <h3>AI &amp; Security Research</h3>
+            <p>
+              Exploring how machine learning and large language models
+              can support security analysis, research, and automation.
+            </p>
+            <div class="skill-list">
+              <span class="skill-tag">AI Security</span>
+              <span class="skill-tag">LLMs</span>
+              <span class="skill-tag">Research</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">
+              <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+            </div>
+            <h3>Electronics &amp; Robotics</h3>
+            <p>
+              Hands-on electronics, embedded experiments, microcontrollers,
+              Raspberry Pi projects, and robot-car concepts.
+            </p>
+            <div class="skill-list">
+              <span class="skill-tag">Raspberry Pi</span>
+              <span class="skill-tag">RFID</span>
+              <span class="skill-tag">Robotics</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">
+              <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
+            </div>
+            <h3>Networks &amp; Systems</h3>
+            <p>
+              Exploring network technologies, operating systems,
+              virtualization, and the infrastructure behind digital systems.
+            </p>
+            <div class="skill-list">
+              <span class="skill-tag">Networking</span>
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">Virtual Labs</span>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-icon">
+              <i class="fa-solid fa-cubes" aria-hidden="true"></i>
+            </div>
+            <h3>Creative Technology</h3>
+            <p>
+              Combining technology and creativity through game development,
+              digital art, experimental projects, and problem-solving.
+            </p>
+            <div class="skill-list">
+              <span class="skill-tag">Game Development</span>
+              <span class="skill-tag">Digital Art</span>
+              <span class="skill-tag">Prototyping</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">// 04 — SELECTED WORK</p>
+          <h2 class="section-title">Things I've <span class="highlight">built & explored.</span></h2>
+          <p class="section-description">
+            A snapshot of the kinds of projects that have shaped my
+            technical journey. Add links to individual repositories or
+            demos as you publish them.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+
+          <article class="card project-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-lock" aria-hidden="true"></i>
+            </div>
+            <p class="card-meta">SECURITY / BLOCKCHAIN</p>
+            <h3>Web &amp; Crypto Experiments</h3>
+            <p>
+              Experiments with web technologies and crypto-related ideas,
+              combining development with exploration of blockchain concepts.
+            </p>
+            <div class="project-footer">
+              PERSONAL PROJECTS
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-terminal" aria-hidden="true"></i>
+            </div>
+            <p class="card-meta">CYBERSECURITY / LEARNING</p>
+            <h3>Security Labs &amp; CTFs</h3>
+            <p>
+              Hands-on cybersecurity learning through challenges, lab
+              environments, research, and practical experimentation.
+            </p>
+            <div class="project-footer">
+              PRACTICAL LEARNING
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-robot" aria-hidden="true"></i>
+            </div>
+            <p class="card-meta">HARDWARE / ROBOTICS</p>
+            <h3>Robot Car &amp; Electronics</h3>
+            <p>
+              Hardware-oriented experiments, robot-car concepts,
+              RFID projects, and electronics work involving Raspberry Pi.
+            </p>
+            <div class="project-footer">
+              HARDWARE EXPERIMENTS
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+            </div>
+            <p class="card-meta">DEVELOPMENT / GAMING</p>
+            <h3>2D Game Development</h3>
+            <p>
+              Exploring game mechanics and interactive experiences for
+              PC and mobile platforms.
+            </p>
+            <div class="project-footer">
+              GAME DEVELOPMENT
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-comments" aria-hidden="true"></i>
+            </div>
+            <p class="card-meta">SOFTWARE / AUTOMATION</p>
+            <h3>Chatbots &amp; Scripts</h3>
+            <p>
+              Building and experimenting with scripts, automated workflows,
+              and conversational software ideas.
+            </p>
+            <div class="project-footer">
+              SOFTWARE EXPERIMENTS
+            </div>
+          </article>
+
+          <article class="card project-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-palette" aria-hidden="true"></i>
+            </div>
+            <p class="card-meta">CREATIVITY / DIGITAL ART</p>
+            <h3>Manga Art &amp; Creative Projects</h3>
+            <p>
+              Exploring the creative side of technology through manga art,
+              visual concepts, and digital experimentation.
+            </p>
+            <div class="project-footer">
+              CREATIVE EXPLORATION
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ONLINE PROFILES -->
+    <section class="section" id="profiles">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">// 05 — FIND ME ONLINE</p>
+          <h2 class="section-title">My digital <span class="highlight">footprint.</span></h2>
+          <p class="section-description">
+            Connect with me, explore my writing and code, or find me on
+            cybersecurity learning and challenge platforms.
+          </p>
+        </div>
+
+        <div class="profiles-grid">
+
+          <a
+            class="profile-card"
+            href="https://lb.linkedin.com/in/abida-adra"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit my LinkedIn profile"
+          >
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            <div>
+              <h3>LinkedIn</h3>
+              <span>Professional profile</span>
+            </div>
+          </a>
+
+          <a
+            class="profile-card"
+            href="https://github.com/abidaadra"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit my GitHub profile"
+          >
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            <div>
+              <h3>GitHub</h3>
+              <span>Code &amp; repositories</span>
+            </div>
+          </a>
+
+          <a
+            class="profile-card"
+            href="https://codepen.io/abidaadra"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit my CodePen profile"
+          >
+            <i class="fa-brands fa-codepen" aria-hidden="true"></i>
+            <div>
+              <h3>CodePen</h3>
+              <span>Web experiments</span>
+            </div>
+          </a>
+
+          <a
+            class="profile-card"
+            href="https://abidaadra.medium.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit my Medium profile"
+          >
+            <i class="fa-brands fa-medium" aria-hidden="true"></i>
+            <div>
+              <h3>Medium</h3>
+              <span>Articles &amp; writing</span>
+            </div>
+          </a>
+
+          <a
+            class="profile-card"
+            href="https://app.letsdefend.io/user/abidaadra"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit my LetsDefend profile"
+          >
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            <div>
+              <h3>LetsDefend</h3>
+              <span>Security learning</span>
+            </div>
+          </a>
+
+          <a
+            class="profile-card"
+            href="https://cyberdefenders.org/p/abidaadra"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit my CyberDefenders profile"
+          >
+            <i class="fa-solid fa-user-secret" aria-hidden="true"></i>
+            <div>
+              <h3>CyberDefenders</h3>
+              <span>Blue-team challenges</span>
+            </div>
+          </a>
+
+          <a
+            class="profile-card"
+            href="https://profile.hackthebox.com/profile/019d6784-7bca-7328-a5b5-ce5157bc07e5"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit my Hack The Box profile"
+          >
+            <i class="fa-solid fa-cube" aria-hidden="true"></i>
+            <div>
+              <h3>Hack The Box</h3>
+              <span>Hands-on security</span>
+            </div>
+          </a>
+
+          <a
+            class="profile-card"
+            href="https://tryhackme.com/p/abidaadra"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit my TryHackMe profile"
+          >
+            <i class="fa-solid fa-flag" aria-hidden="true"></i>
+            <div>
+              <h3>TryHackMe</h3>
+              <span>Cybersecurity labs</span>
+            </div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- INTERESTS -->
+    <section class="section" id="interests">
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow">// 06 — BEYOND THE KEYBOARD</p>
+          <h2 class="section-title">More than <span class="highlight">technology.</span></h2>
+          <p class="section-description">
+            The hobbies and creative pursuits that keep me curious,
+            challenge my thinking, and make life more interesting.
+          </p>
+        </div>
+
+        <div class="interests-grid">
+
+          <div class="interest">
+            <i class="fa-solid fa-chess-knight" aria-hidden="true"></i>
+            <span>Chess Player</span>
+          </div>
+
+          <div class="interest">
+            <i class="fa-solid fa-cube" aria-hidden="true"></i>
+            <span>Cuber / Speedcubing</span>
+          </div>
+
+          <div class="interest">
+            <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+            <span>Gamer</span>
+          </div>
+
+          <div class="interest">
+            <i class="fa-solid fa-paintbrush" aria-hidden="true"></i>
+            <span>Manga Art</span>
+          </div>
+
+          <div class="interest">
+            <i class="fa-solid fa-robot" aria-hidden="true"></i>
+            <span>Robotics</span>
+          </div>
+
+          <div class="interest">
+            <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+            <span>Electronics</span>
+          </div>
+
+          <div class="interest">
+            <i class="fa-solid fa-music" aria-hidden="true"></i>
+            <span>EDM &amp; Music</span>
+          </div>
+
+          <div class="interest">
+            <i class="fa-solid fa-puzzle-piece" aria-hidden="true"></i>
+            <span>Puzzles &amp; Problem-Solving</span>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section class="section" id="contact">
+      <div class="container">
+
+        <div class="contact-panel">
+          <p class="eyebrow">// 07 — LET'S CONNECT</p>
+
+          <h2>
+            Curious minds.<br>
+            <span class="highlight">Interesting projects.</span>
+          </h2>
+
+          <p>
+            Whether it's cybersecurity, software development, creative
+            technology, or an interesting technical challenge, I'm always
+            happy to explore new ideas and connect with like-minded people.
+          </p>
+
+          <a
+            href="https://lb.linkedin.com/in/abida-adra"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-primary"
+          >
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            Connect on LinkedIn
+          </a>
+
+          <a
+            href="https://github.com/abidaadra"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-secondary"
+          >
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            Explore My GitHub
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+
+      <p>
+        <span class="highlight">~/</span>abida_adra
+        &nbsp;|&nbsp; Built with curiosity and code.
+      </p>
+
+      <div class="footer-socials" aria-label="Social and professional links">
+
+        <a
+          href="https://lb.linkedin.com/in/abida-adra"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+        </a>
+
+        <a
+          href="https://github.com/abidaadra"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <i class="fa-brands fa-github" aria-hidden="true"></i>
+        </a>
+
+        <a
+          href="https://abidaadra.medium.com/"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Medium"
+        >
+          <i class="fa-brands fa-medium" aria-hidden="true"></i>
+        </a>
+
+        <a
+          href="https://tryhackme.com/p/abidaadra"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="TryHackMe"
+        >
+          <i class="fa-solid fa-flag" aria-hidden="true"></i>
+        </a>
+
+        <a href="#top" class="back-to-top" aria-label="Back to top">
+          ↑ TOP
+        </a>
+
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+
+      menuToggle.innerHTML = isOpen
+        ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i>'
+        : '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+    });
+
+    navLinks.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.innerHTML =
+          '<i class="fa-solid fa-bars" aria-hidden="true"></i>';
+      });
+    });
+  </script>
+
+</body>
+</html>
