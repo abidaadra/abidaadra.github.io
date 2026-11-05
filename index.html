@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,15 +10,15 @@
 
   <meta
     name="description"
-    content="The personal portfolio of Abida Adra — computer science graduate, IT professional, cybersecurity enthusiast, developer, chess player, and cuber."
+    content="The personal portfolio of Abida Adra — computer science graduate, IT professional, cybersecurity enthusiast, developer, and technology explorer."
   >
   <meta name="theme-color" content="#0b0f0d">
 
-  <!-- Favicon: keep letterA.jpg in the same folder as index.html -->
-  <link rel="icon" type="image/jpg" href="letterA.jpg">
-  <link rel="apple-touch-icon" href="letterA.jpg">
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="letterA.jpeg">
+  <link rel="apple-touch-icon" href="letterA.jpeg">
 
-  <!-- Fonts -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
@@ -25,7 +26,7 @@
     rel="stylesheet"
   >
 
-  <!-- Font Awesome icons -->
+  <!-- Font Awesome -->
   <link
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -93,19 +94,10 @@
       text-decoration: none;
     }
 
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
-    }
-
     a:focus-visible,
     button:focus-visible {
       outline: 2px solid var(--green);
       outline-offset: 4px;
-    }
-
-    img {
-      max-width: 100%;
     }
 
     .container {
@@ -157,7 +149,7 @@
       font-family: var(--font-code);
     }
 
-    /* Navigation */
+    /* NAVIGATION */
 
     .navbar {
       position: sticky;
@@ -206,7 +198,7 @@
       color: var(--green);
     }
 
-    /* Hero */
+    /* HERO */
 
     .hero {
       min-height: 82vh;
@@ -300,10 +292,7 @@
       border: 1px solid var(--green);
       font-family: var(--font-code);
       font-size: 0.83rem;
-      transition:
-        background 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
+      transition: all 0.2s ease;
     }
 
     .btn:hover {
@@ -329,7 +318,7 @@
       background: var(--green-glow);
     }
 
-    /* About */
+    /* ABOUT */
 
     .about-grid {
       display: grid;
@@ -402,7 +391,7 @@
       color: #c1d0c6;
     }
 
-    /* Education */
+    /* EDUCATION */
 
     .education-grid {
       display: grid;
@@ -415,9 +404,7 @@
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: var(--radius);
-      transition:
-        transform 0.2s ease,
-        border-color 0.2s ease;
+      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .education-card:hover {
@@ -459,7 +446,7 @@
       font-size: 0.92rem;
     }
 
-    /* Expertise */
+    /* EXPERTISE */
 
     .expertise-grid {
       display: grid;
@@ -504,7 +491,7 @@
       overflow-wrap: anywhere;
     }
 
-    /* Selected work */
+    /* SELECTED WORK */
 
     .cards-grid {
       display: grid;
@@ -524,10 +511,7 @@
         rgba(20, 30, 23, 0.96),
         rgba(14, 19, 16, 0.96)
       );
-      transition:
-        transform 0.2s ease,
-        border-color 0.2s ease,
-        box-shadow 0.2s ease;
+      transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
     .project-card:hover {
@@ -563,11 +547,11 @@
       letter-spacing: 0.04em;
     }
 
-    /* Profiles */
+    /* ONLINE PROFILES */
 
     .profiles-grid {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
     }
 
@@ -580,10 +564,7 @@
       background: var(--card);
       border: 1px solid var(--border);
       border-radius: 10px;
-      transition:
-        transform 0.2s ease,
-        border-color 0.2s ease,
-        background 0.2s ease;
+      transition: all 0.2s ease;
     }
 
     .profile-link:hover {
@@ -613,7 +594,7 @@
       margin-top: 2px;
     }
 
-    /* Beyond the keyboard */
+    /* INTERESTS */
 
     .interests-grid {
       display: flex;
@@ -631,10 +612,7 @@
       background: var(--card);
       color: #cfddd3;
       font-size: 0.87rem;
-      transition:
-        border-color 0.2s ease,
-        color 0.2s ease,
-        transform 0.2s ease;
+      transition: all 0.2s ease;
     }
 
     .interest:hover {
@@ -647,7 +625,7 @@
       color: var(--green);
     }
 
-    /* Contact */
+    /* CONTACT */
 
     .contact-panel {
       position: relative;
@@ -676,7 +654,7 @@
       margin-bottom: 25px;
     }
 
-    /* Footer */
+    /* FOOTER */
 
     .footer {
       padding: 28px 0;
@@ -701,7 +679,7 @@
       font-size: 0.75rem;
     }
 
-    /* Responsive */
+    /* RESPONSIVE */
 
     @media (max-width: 900px) {
       .nav-inner {
@@ -801,6 +779,7 @@
   <!-- NAVIGATION -->
   <header class="navbar">
     <nav class="container nav-inner" aria-label="Main navigation">
+
       <a class="logo" href="#home" aria-label="Abida Adra home">
         <span>&lt;</span>abida.adra<span>/&gt;</span>
       </a>
@@ -814,6 +793,7 @@
         <li><a href="#interests">06 / INTERESTS</a></li>
         <li><a href="#contact">07 / CONTACT</a></li>
       </ul>
+
     </nav>
   </header>
 
@@ -916,7 +896,7 @@
             </p>
           </div>
 
-          <div class="about-terminal" aria-label="Portfolio profile summary">
+          <div class="about-terminal">
             <div class="terminal-bar" aria-hidden="true">
               <span></span>
               <span></span>
@@ -1175,14 +1155,13 @@
 
         <div class="cards-grid">
 
-          <!-- NETWORKING PROJECT -->
+          <!-- NETWORKING -->
           <article class="project-card">
             <div class="card-icon">
               <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
             </div>
 
             <p class="card-meta">NETWORKING / CISCO PACKET TRACER</p>
-
             <h3>Network Infrastructure Design</h3>
 
             <p>
@@ -1199,9 +1178,7 @@
               <span class="skill-tag">Network Simulation</span>
             </div>
 
-            <div class="project-footer">
-              NETWORK ENGINEERING
-            </div>
+            <div class="project-footer">NETWORK ENGINEERING</div>
           </article>
 
           <!-- AI CYBERSECURITY -->
@@ -1211,7 +1188,6 @@
             </div>
 
             <p class="card-meta">AI / CYBERSECURITY RESEARCH</p>
-
             <h3>AI-Based Cybersecurity Research</h3>
 
             <p>
@@ -1227,9 +1203,7 @@
               <span class="skill-tag">Evaluation</span>
             </div>
 
-            <div class="project-footer">
-              AI & SECURITY
-            </div>
+            <div class="project-footer">AI & SECURITY</div>
           </article>
 
           <!-- WEB AND CRYPTO -->
@@ -1239,7 +1213,6 @@
             </div>
 
             <p class="card-meta">WEB DEVELOPMENT / CRYPTO</p>
-
             <h3>Web & Crypto Project</h3>
 
             <p>
@@ -1254,9 +1227,7 @@
               <span class="skill-tag">Experimentation</span>
             </div>
 
-            <div class="project-footer">
-              WEB TECHNOLOGY
-            </div>
+            <div class="project-footer">WEB TECHNOLOGY</div>
           </article>
 
           <!-- GAME DEVELOPMENT -->
@@ -1266,7 +1237,6 @@
             </div>
 
             <p class="card-meta">GAME DEVELOPMENT</p>
-
             <h3>2D PC & Mobile Game Development</h3>
 
             <p>
@@ -1282,9 +1252,7 @@
               <span class="skill-tag">Game Design</span>
             </div>
 
-            <div class="project-footer">
-              INTERACTIVE DEVELOPMENT
-            </div>
+            <div class="project-footer">INTERACTIVE DEVELOPMENT</div>
           </article>
 
           <!-- CHATBOTS -->
@@ -1294,7 +1262,6 @@
             </div>
 
             <p class="card-meta">AUTOMATION / SOFTWARE</p>
-
             <h3>Chatbot Projects</h3>
 
             <p>
@@ -1309,9 +1276,7 @@
               <span class="skill-tag">Programming</span>
             </div>
 
-            <div class="project-footer">
-              SOFTWARE EXPERIMENTATION
-            </div>
+            <div class="project-footer">SOFTWARE EXPERIMENTATION</div>
           </article>
 
           <!-- ROBOT CAR -->
@@ -1321,7 +1286,6 @@
             </div>
 
             <p class="card-meta">ROBOTICS / HARDWARE</p>
-
             <h3>Robot Car</h3>
 
             <p>
@@ -1337,19 +1301,16 @@
               <span class="skill-tag">Automation</span>
             </div>
 
-            <div class="project-footer">
-              ROBOTICS & ENGINEERING
-            </div>
+            <div class="project-footer">ROBOTICS & ENGINEERING</div>
           </article>
 
-          <!-- UNIVERSITY ELECTRONICS -->
+          <!-- ELECTRONICS -->
           <article class="project-card">
             <div class="card-icon">
               <i class="fa-solid fa-microchip" aria-hidden="true"></i>
             </div>
 
             <p class="card-meta">UNIVERSITY / ELECTRONICS</p>
-
             <h3>Electronics & Embedded Projects</h3>
 
             <p>
@@ -1366,9 +1327,7 @@
               <span class="skill-tag">Embedded Systems</span>
             </div>
 
-            <div class="project-footer">
-              HARDWARE & COMPUTING
-            </div>
+            <div class="project-footer">HARDWARE & COMPUTING</div>
           </article>
 
           <!-- MANGA ART -->
@@ -1378,7 +1337,6 @@
             </div>
 
             <p class="card-meta">CREATIVE / DIGITAL ART</p>
-
             <h3>Manga Art & Creative Exploration</h3>
 
             <p>
@@ -1394,9 +1352,7 @@
               <span class="skill-tag">Visual Design</span>
             </div>
 
-            <div class="project-footer">
-              CREATIVE EXPRESSION
-            </div>
+            <div class="project-footer">CREATIVE EXPRESSION</div>
           </article>
 
         </div>
@@ -1411,19 +1367,19 @@
           <p class="section-label">// 05 — FIND ME ONLINE</p>
           <h2 class="section-title">Explore my <span>work.</span></h2>
           <p class="section-description">
-            Connect with me, explore my code, read my writing, and
-            find my cybersecurity learning profiles.
+            Connect with me, explore my code, read my writing,
+            and find my cybersecurity learning profiles.
           </p>
         </div>
 
         <div class="profiles-grid">
 
+          <!-- LINKEDIN -->
           <a
             class="profile-link"
             href="https://lb.linkedin.com/in/abida-adra"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Visit my LinkedIn profile"
           >
             <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
             <span>
@@ -1432,12 +1388,12 @@
             </span>
           </a>
 
+          <!-- GITHUB -->
           <a
             class="profile-link"
             href="https://github.com/abidaadra"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Visit my GitHub profile"
           >
             <i class="fa-brands fa-github" aria-hidden="true"></i>
             <span>
@@ -1446,12 +1402,12 @@
             </span>
           </a>
 
+          <!-- CODEPEN -->
           <a
             class="profile-link"
             href="https://codepen.io/abidaadra"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Visit my CodePen profile"
           >
             <i class="fa-brands fa-codepen" aria-hidden="true"></i>
             <span>
@@ -1460,12 +1416,12 @@
             </span>
           </a>
 
+          <!-- MEDIUM -->
           <a
             class="profile-link"
             href="https://abidaadra.medium.com/"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Read my Medium articles"
           >
             <i class="fa-brands fa-medium" aria-hidden="true"></i>
             <span>
@@ -1474,12 +1430,12 @@
             </span>
           </a>
 
+          <!-- LETSDEFEND -->
           <a
             class="profile-link"
             href="https://app.letsdefend.io/user/abidaadra"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Visit my LetsDefend profile"
           >
             <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
             <span>
@@ -1488,12 +1444,12 @@
             </span>
           </a>
 
+          <!-- CYBERDEFENDERS -->
           <a
             class="profile-link"
             href="https://cyberdefenders.org/p/abidaadra"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Visit my CyberDefenders profile"
           >
             <i class="fa-solid fa-user-secret" aria-hidden="true"></i>
             <span>
@@ -1502,12 +1458,12 @@
             </span>
           </a>
 
+          <!-- HACK THE BOX -->
           <a
             class="profile-link"
             href="https://profile.hackthebox.com/profile/019d6784-7bca-7328-a5b5-ce5157bc07e5"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Visit my Hack The Box profile"
           >
             <i class="fa-solid fa-cube" aria-hidden="true"></i>
             <span>
@@ -1516,17 +1472,32 @@
             </span>
           </a>
 
+          <!-- TRYHACKME -->
           <a
             class="profile-link"
             href="https://tryhackme.com/p/abidaadra"
             target="_blank"
             rel="noopener noreferrer"
-            aria-label="Visit my TryHackMe profile"
           >
             <i class="fa-solid fa-flag" aria-hidden="true"></i>
             <span>
               <strong>TryHackMe</strong>
               <small>Labs & learning</small>
+            </span>
+          </a>
+
+          <!-- MOBILE HACKING LAB -->
+          <a
+            class="profile-link"
+            href="https://www.mobilehackinglab.com/u/683e00ec7cbcd8aa"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit my Mobile Hacking Lab profile"
+          >
+            <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+            <span>
+              <strong>Mobile Hacking Lab</strong>
+              <small>Mobile security research</small>
             </span>
           </a>
 
@@ -1607,6 +1578,7 @@
       <div class="container">
 
         <div class="contact-panel">
+
           <p class="section-label">// 07 — LET'S CONNECT</p>
 
           <h2>
@@ -1631,8 +1603,8 @@
             Connect on LinkedIn
             <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
           </a>
-        </div>
 
+        </div>
       </div>
     </section>
 
@@ -1656,7 +1628,7 @@
   </footer>
 
   <script>
-    // Keep the footer year current automatically.
+    // Automatically update the footer year.
     document.getElementById("current-year").textContent =
       new Date().getFullYear();
   </script>
