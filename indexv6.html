@@ -1,0 +1,1637 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Abida Adra | IT, Cybersecurity & Development</title>
+
+  <meta
+    name="description"
+    content="The personal portfolio of Abida Adra — computer science graduate, IT professional, cybersecurity enthusiast, developer, and technology explorer."
+  >
+  <meta name="theme-color" content="#0b0f0d">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="letterA.jpeg">
+  <link rel="apple-touch-icon" href="letterA.jpeg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+  >
+
+  <style>
+    :root {
+      --bg: #0b0f0d;
+      --bg-soft: #101612;
+      --card: #111914;
+      --card-hover: #162019;
+      --green: #39ff88;
+      --green-dark: #19c765;
+      --green-glow: rgba(57, 255, 136, 0.13);
+      --text: #e9f3ec;
+      --muted: #94a69a;
+      --border: rgba(57, 255, 136, 0.19);
+      --font-code: "Fira Code", monospace;
+      --font-main: "Inter", sans-serif;
+      --radius: 14px;
+      --max-width: 1120px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      background:
+        radial-gradient(
+          ellipse at 50% 0%,
+          rgba(26, 87, 50, 0.15),
+          transparent 45%
+        ),
+        var(--bg);
+      color: var(--text);
+      font-family: var(--font-main);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      opacity: 0.12;
+      background-image:
+        linear-gradient(rgba(57, 255, 136, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(57, 255, 136, 0.05) 1px, transparent 1px);
+      background-size: 42px 42px;
+      mask-image: linear-gradient(to bottom, black, transparent 85%);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible,
+    button:focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: 4px;
+    }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 100px 0;
+    }
+
+    .section-header {
+      margin-bottom: 42px;
+    }
+
+    .section-label {
+      color: var(--green);
+      font-family: var(--font-code);
+      font-size: 0.82rem;
+      margin-bottom: 10px;
+      letter-spacing: 0.06em;
+    }
+
+    .section-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem);
+      line-height: 1.2;
+      letter-spacing: -0.04em;
+    }
+
+    .section-title span {
+      color: var(--green);
+    }
+
+    .section-description {
+      color: var(--muted);
+      margin-top: 14px;
+      max-width: 690px;
+    }
+
+    .green {
+      color: var(--green);
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .code {
+      font-family: var(--font-code);
+    }
+
+    /* NAVIGATION */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(11, 15, 13, 0.9);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 72px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .logo {
+      font-family: var(--font-code);
+      font-size: 1.1rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .logo span {
+      color: var(--green);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 22px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      font-family: var(--font-code);
+      font-size: 0.76rem;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      padding: 90px 0 100px;
+    }
+
+    .hero-content {
+      max-width: 900px;
+    }
+
+    .terminal-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--border);
+      background: rgba(57, 255, 136, 0.04);
+      padding: 9px 14px;
+      border-radius: 7px;
+      color: var(--green);
+      font-family: var(--font-code);
+      font-size: 0.8rem;
+      margin-bottom: 28px;
+    }
+
+    .terminal-dot {
+      width: 8px;
+      height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      box-shadow: 0 0 12px var(--green);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.7rem, 8vw, 5.7rem);
+      line-height: 1.08;
+      letter-spacing: -0.065em;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 .highlight {
+      color: var(--green);
+      text-shadow: 0 0 30px rgba(57, 255, 136, 0.12);
+    }
+
+    .hero-subtitle {
+      font-family: var(--font-code);
+      color: var(--muted);
+      font-size: clamp(0.9rem, 2vw, 1.1rem);
+      margin-bottom: 22px;
+    }
+
+    .hero-description {
+      max-width: 700px;
+      color: #b7c7bc;
+      font-size: 1.03rem;
+      margin-bottom: 30px;
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 34px;
+    }
+
+    .hero-tag {
+      padding: 7px 12px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      color: #c9d9ce;
+      font-family: var(--font-code);
+      font-size: 0.76rem;
+      background: rgba(255, 255, 255, 0.015);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 19px;
+      border-radius: 7px;
+      border: 1px solid var(--green);
+      font-family: var(--font-code);
+      font-size: 0.83rem;
+      transition: all 0.2s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--green);
+      color: #07110b;
+      font-weight: 700;
+    }
+
+    .btn-primary:hover {
+      background: #70ffab;
+    }
+
+    .btn-outline {
+      color: var(--green);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: var(--green-glow);
+    }
+
+    /* ABOUT */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.35fr 0.85fr;
+      gap: 34px;
+      align-items: start;
+    }
+
+    .about-text p {
+      color: #b5c5ba;
+      margin-bottom: 18px;
+    }
+
+    .about-text strong {
+      color: var(--text);
+    }
+
+    .about-terminal {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+      overflow: hidden;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.14);
+    }
+
+    .terminal-bar {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 13px 16px;
+      border-bottom: 1px solid var(--border);
+      background: rgba(255, 255, 255, 0.02);
+    }
+
+    .terminal-bar span {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: #42564a;
+    }
+
+    .terminal-bar span:first-child {
+      background: #ff6b6b;
+    }
+
+    .terminal-bar span:nth-child(2) {
+      background: #ffd166;
+    }
+
+    .terminal-bar span:nth-child(3) {
+      background: var(--green);
+    }
+
+    .terminal-body {
+      padding: 22px;
+      font-family: var(--font-code);
+      font-size: 0.8rem;
+      overflow-wrap: anywhere;
+    }
+
+    .terminal-line {
+      margin-bottom: 13px;
+    }
+
+    .terminal-key {
+      color: var(--green);
+    }
+
+    .terminal-value {
+      color: #c1d0c6;
+    }
+
+    /* EDUCATION */
+
+    .education-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .education-card {
+      padding: 28px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .education-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--green);
+    }
+
+    .card-icon {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      color: var(--green);
+      background: var(--green-glow);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-size: 1.15rem;
+      margin-bottom: 20px;
+    }
+
+    .card-meta {
+      color: var(--green);
+      font-family: var(--font-code);
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 9px;
+    }
+
+    .education-card h3,
+    .project-card h3 {
+      font-size: 1.15rem;
+      line-height: 1.4;
+      margin-bottom: 10px;
+    }
+
+    .education-card p,
+    .project-card p {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    /* EXPERTISE */
+
+    .expertise-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .expertise-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 23px;
+    }
+
+    .expertise-card h3 {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1rem;
+      margin-bottom: 15px;
+    }
+
+    .expertise-card h3 i {
+      color: var(--green);
+    }
+
+    .skill-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 17px;
+    }
+
+    .skill-tag {
+      display: inline-block;
+      padding: 5px 9px;
+      border: 1px solid rgba(148, 166, 154, 0.2);
+      border-radius: 5px;
+      color: #bdcdc2;
+      font-family: var(--font-code);
+      font-size: 0.69rem;
+      overflow-wrap: anywhere;
+    }
+
+    /* SELECTED WORK */
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 27px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: linear-gradient(
+        145deg,
+        rgba(20, 30, 23, 0.96),
+        rgba(14, 19, 16, 0.96)
+      );
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(57, 255, 136, 0.55);
+      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.16);
+    }
+
+    .project-card .card-icon {
+      margin-bottom: 18px;
+    }
+
+    .project-card h3 {
+      margin-bottom: 12px;
+    }
+
+    .project-card > p:not(.card-meta) {
+      margin-bottom: 5px;
+    }
+
+    .project-card .skill-list {
+      margin-top: 20px;
+    }
+
+    .project-footer {
+      width: 100%;
+      border-top: 1px solid var(--border);
+      margin-top: 22px;
+      padding-top: 15px;
+      color: var(--green);
+      font-family: var(--font-code);
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* ONLINE PROFILES */
+
+    .profiles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .profile-link {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      min-width: 0;
+      padding: 17px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      transition: all 0.2s ease;
+    }
+
+    .profile-link:hover {
+      transform: translateY(-3px);
+      border-color: var(--green);
+      background: var(--card-hover);
+    }
+
+    .profile-link > i {
+      flex-shrink: 0;
+      color: var(--green);
+      font-size: 1.3rem;
+      width: 25px;
+      text-align: center;
+    }
+
+    .profile-link strong {
+      display: block;
+      font-size: 0.83rem;
+      overflow-wrap: anywhere;
+    }
+
+    .profile-link small {
+      display: block;
+      color: var(--muted);
+      font-size: 0.7rem;
+      margin-top: 2px;
+    }
+
+    /* INTERESTS */
+
+    .interests-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .interest {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 12px 16px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--card);
+      color: #cfddd3;
+      font-size: 0.87rem;
+      transition: all 0.2s ease;
+    }
+
+    .interest:hover {
+      border-color: var(--green);
+      color: var(--green);
+      transform: translateY(-2px);
+    }
+
+    .interest i {
+      color: var(--green);
+    }
+
+    /* CONTACT */
+
+    .contact-panel {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(28px, 5vw, 55px);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background:
+        radial-gradient(
+          ellipse at 100% 0%,
+          rgba(57, 255, 136, 0.1),
+          transparent 50%
+        ),
+        var(--card);
+    }
+
+    .contact-panel h2 {
+      font-size: clamp(1.8rem, 5vw, 2.8rem);
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .contact-panel p {
+      max-width: 620px;
+      color: var(--muted);
+      margin-bottom: 25px;
+    }
+
+    /* FOOTER */
+
+    .footer {
+      padding: 28px 0;
+      border-top: 1px solid var(--border);
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .footer p {
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .footer .code {
+      color: var(--green);
+      font-size: 0.75rem;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 900px) {
+      .nav-inner {
+        padding: 15px 0;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 10px 18px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .expertise-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .profiles-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 95px 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 28px, var(--max-width));
+      }
+
+      .section {
+        padding: 72px 0;
+      }
+
+      .nav-links {
+        gap: 9px 14px;
+      }
+
+      .nav-links a {
+        font-size: 0.7rem;
+      }
+
+      .education-grid,
+      .expertise-grid,
+      .cards-grid,
+      .profiles-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.5rem, 12vw, 4rem);
+      }
+
+      .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .education-card,
+      .project-card {
+        padding: 22px;
+      }
+
+      .footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header class="navbar">
+    <nav class="container nav-inner" aria-label="Main navigation">
+
+      <a class="logo" href="#home" aria-label="Abida Adra home">
+        <span>&lt;</span>abida.adra<span>/&gt;</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#about">01 / ABOUT</a></li>
+        <li><a href="#education">02 / EDUCATION</a></li>
+        <li><a href="#expertise">03 / EXPERTISE</a></li>
+        <li><a href="#projects">04 / WORK</a></li>
+        <li><a href="#profiles">05 / PROFILES</a></li>
+        <li><a href="#interests">06 / INTERESTS</a></li>
+        <li><a href="#contact">07 / CONTACT</a></li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="container hero-content">
+
+        <div class="terminal-label">
+          <span class="terminal-dot"></span>
+          SYSTEM ONLINE — WELCOME TO MY PORTFOLIO
+        </div>
+
+        <h1>
+          Hi, I'm <span class="highlight">Abida Adra.</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          Computer Science // IT // Cybersecurity // Development
+        </p>
+
+        <p class="hero-description">
+          A computer science graduate with a technical diploma in
+          Information Technology and more than 10 years of experience
+          across IT and technical fields. I enjoy exploring technology,
+          building projects, solving problems, and learning how systems
+          work — from software and networks to cybersecurity and electronics.
+        </p>
+
+        <div class="hero-tags">
+          <span class="hero-tag">Cybersecurity</span>
+          <span class="hero-tag">IT & Networking</span>
+          <span class="hero-tag">Software Development</span>
+          <span class="hero-tag">Electronics & Robotics</span>
+          <span class="hero-tag">Continuous Learning</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#projects">
+            <i class="fa-solid fa-terminal" aria-hidden="true"></i>
+            Explore My Work
+          </a>
+
+          <a
+            class="btn btn-outline"
+            href="https://lb.linkedin.com/in/abida-adra"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            Connect on LinkedIn
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 01 — ABOUT ME -->
+    <section class="section" id="about">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-label">// 01 — ABOUT ME</p>
+          <h2 class="section-title">A little about <span>me.</span></h2>
+          <p class="section-description">
+            Technology is more than a job title. It is a space for
+            curiosity, creativity, experimentation, and lifelong learning.
+          </p>
+        </div>
+
+        <div class="about-grid">
+
+          <div class="about-text">
+            <p>
+              I'm <strong>Abida Adra</strong>, a computer science graduate
+              with a technical diploma in Information Technology and
+              more than a decade of experience across different IT
+              and technical fields.
+            </p>
+
+            <p>
+              My interests span <strong>cybersecurity, networking,
+              programming, web development, game development,
+              electronics, and robotics</strong>. I enjoy learning by
+              experimenting, building things, solving challenges, and
+              connecting ideas across different areas of technology.
+            </p>
+
+            <p>
+              I'm particularly interested in practical cybersecurity,
+              security research, digital defense, and the ways artificial
+              intelligence can help us understand and protect systems.
+            </p>
+
+            <p>
+              Outside traditional technical work, I enjoy creative
+              projects, puzzles, chess, cubing, gaming, and exploring
+              technologies that could help shape the future.
+            </p>
+          </div>
+
+          <div class="about-terminal">
+            <div class="terminal-bar" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <div class="terminal-body">
+              <p class="terminal-line">
+                <span class="terminal-key">$ whoami</span>
+              </p>
+              <p class="terminal-line">
+                <span class="terminal-value">Abida Adra</span>
+              </p>
+
+              <p class="terminal-line">
+                <span class="terminal-key">$ education</span>
+              </p>
+              <p class="terminal-line">
+                <span class="terminal-value">BSc Computer Science</span>
+              </p>
+              <p class="terminal-line">
+                <span class="terminal-value">Technical Diploma in IT</span>
+              </p>
+
+              <p class="terminal-line">
+                <span class="terminal-key">$ experience</span>
+              </p>
+              <p class="terminal-line">
+                <span class="terminal-value">10+ years across IT and technical fields</span>
+              </p>
+
+              <p class="terminal-line">
+                <span class="terminal-key">$ interests</span>
+              </p>
+              <p class="terminal-line">
+                <span class="terminal-value">
+                  Security, networks, code, electronics, problem-solving
+                </span>
+              </p>
+
+              <p class="terminal-line">
+                <span class="terminal-key">$ status</span>
+              </p>
+              <p class="terminal-line">
+                <span class="green">Curious. Building. Learning.</span>
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 02 — EDUCATION -->
+    <section class="section" id="education">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-label">// 02 — EDUCATION</p>
+          <h2 class="section-title">Education & <span>foundations.</span></h2>
+          <p class="section-description">
+            My academic background combines computer science with
+            technical IT education.
+          </p>
+        </div>
+
+        <div class="education-grid">
+
+          <article class="education-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+            </div>
+
+            <p class="card-meta">ACADEMIC DEGREE</p>
+            <h3>BSc in Computer Science</h3>
+
+            <p>
+              University-level education in computer science,
+              providing a foundation for understanding software,
+              computing systems, and technical problem-solving.
+            </p>
+          </article>
+
+          <article class="education-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+            </div>
+
+            <p class="card-meta">TECHNICAL QUALIFICATION</p>
+            <h3>Technical Diploma in Information Technology</h3>
+
+            <p>
+              Technical education in Information Technology,
+              complementing my computer science background and
+              practical experience across IT-related fields.
+            </p>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 — AREAS OF EXPERTISE -->
+    <section class="section" id="expertise">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-label">// 03 — AREAS OF EXPERTISE</p>
+          <h2 class="section-title">Areas I <span>explore.</span></h2>
+          <p class="section-description">
+            A broad set of technical interests spanning security,
+            software, infrastructure, and hands-on engineering.
+          </p>
+        </div>
+
+        <div class="expertise-grid">
+
+          <article class="expertise-card">
+            <h3>
+              <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+              Cybersecurity
+            </h3>
+
+            <p class="muted">
+              Security research, defensive security, investigation,
+              and hands-on security challenges.
+            </p>
+
+            <div class="skill-list">
+              <span class="skill-tag">Bug Bounty</span>
+              <span class="skill-tag">CTFs</span>
+              <span class="skill-tag">Blue Team</span>
+              <span class="skill-tag">Red Team</span>
+              <span class="skill-tag">Digital Forensics</span>
+              <span class="skill-tag">Malware Analysis</span>
+            </div>
+          </article>
+
+          <article class="expertise-card">
+            <h3>
+              <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
+              Networking & Infrastructure
+            </h3>
+
+            <p class="muted">
+              Network design, connectivity, infrastructure,
+              and understanding how systems communicate.
+            </p>
+
+            <div class="skill-list">
+              <span class="skill-tag">Cisco Packet Tracer</span>
+              <span class="skill-tag">Network Design</span>
+              <span class="skill-tag">IP Addressing</span>
+              <span class="skill-tag">Network Security</span>
+              <span class="skill-tag">Infrastructure</span>
+            </div>
+          </article>
+
+          <article class="expertise-card">
+            <h3>
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+              Programming & Development
+            </h3>
+
+            <p class="muted">
+              Building software, experimenting with web technologies,
+              and creating interactive projects.
+            </p>
+
+            <div class="skill-list">
+              <span class="skill-tag">Web Development</span>
+              <span class="skill-tag">HTML & CSS</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Game Development</span>
+              <span class="skill-tag">Chatbots</span>
+            </div>
+          </article>
+
+          <article class="expertise-card">
+            <h3>
+              <i class="fa-solid fa-brain" aria-hidden="true"></i>
+              AI & Security Research
+            </h3>
+
+            <p class="muted">
+              Exploring how AI and machine learning can support
+              cybersecurity analysis and investigation.
+            </p>
+
+            <div class="skill-list">
+              <span class="skill-tag">LLMs</span>
+              <span class="skill-tag">AI Security</span>
+              <span class="skill-tag">Google Colab</span>
+              <span class="skill-tag">Research</span>
+              <span class="skill-tag">Network Anomaly Detection</span>
+            </div>
+          </article>
+
+          <article class="expertise-card">
+            <h3>
+              <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+              Electronics & Robotics
+            </h3>
+
+            <p class="muted">
+              Hands-on technical projects combining hardware,
+              electronics, automation, and software.
+            </p>
+
+            <div class="skill-list">
+              <span class="skill-tag">Raspberry Pi</span>
+              <span class="skill-tag">RFID</span>
+              <span class="skill-tag">Robot Cars</span>
+              <span class="skill-tag">Electronics</span>
+              <span class="skill-tag">Embedded Projects</span>
+            </div>
+          </article>
+
+          <article class="expertise-card">
+            <h3>
+              <i class="fa-solid fa-terminal" aria-hidden="true"></i>
+              Technical Exploration
+            </h3>
+
+            <p class="muted">
+              Exploring tools, operating environments, and technologies
+              across different areas of computing.
+            </p>
+
+            <div class="skill-list">
+              <span class="skill-tag">Linux</span>
+              <span class="skill-tag">Virtual Labs</span>
+              <span class="skill-tag">Open Source</span>
+              <span class="skill-tag">Scripting</span>
+              <span class="skill-tag">Experimentation</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 — SELECTED WORK -->
+    <section class="section" id="projects">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-label">// 04 — SELECTED WORK</p>
+          <h2 class="section-title">Projects & <span>experiments.</span></h2>
+          <p class="section-description">
+            A selection of technical and creative projects across
+            networking, software, cybersecurity, electronics, and gaming.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+
+          <!-- NETWORKING -->
+          <article class="project-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-network-wired" aria-hidden="true"></i>
+            </div>
+
+            <p class="card-meta">NETWORKING / CISCO PACKET TRACER</p>
+            <h3>Network Infrastructure Design</h3>
+
+            <p>
+              Designed and simulated network infrastructure using
+              Cisco Packet Tracer, exploring network topology, device
+              connectivity, IP addressing, and communication between
+              network devices.
+            </p>
+
+            <div class="skill-list">
+              <span class="skill-tag">Cisco Packet Tracer</span>
+              <span class="skill-tag">Network Design</span>
+              <span class="skill-tag">IP Addressing</span>
+              <span class="skill-tag">Network Simulation</span>
+            </div>
+
+            <div class="project-footer">NETWORK ENGINEERING</div>
+          </article>
+
+          <!-- AI CYBERSECURITY -->
+          <article class="project-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-robot" aria-hidden="true"></i>
+            </div>
+
+            <p class="card-meta">AI / CYBERSECURITY RESEARCH</p>
+            <h3>AI-Based Cybersecurity Research</h3>
+
+            <p>
+              Exploring the development of an LLM-based cybersecurity
+              assistant using Google Colab, with a focus on research,
+              dataset selection, evaluation, and practical security use cases.
+            </p>
+
+            <div class="skill-list">
+              <span class="skill-tag">LLMs</span>
+              <span class="skill-tag">Google Colab</span>
+              <span class="skill-tag">Cybersecurity</span>
+              <span class="skill-tag">Evaluation</span>
+            </div>
+
+            <div class="project-footer">AI & SECURITY</div>
+          </article>
+
+          <!-- WEB AND CRYPTO -->
+          <article class="project-card">
+            <div class="card-icon">
+              <i class="fa-brands fa-bitcoin" aria-hidden="true"></i>
+            </div>
+
+            <p class="card-meta">WEB DEVELOPMENT / CRYPTO</p>
+            <h3>Web & Crypto Project</h3>
+
+            <p>
+              Developed a web-based project connected to the crypto
+              space, combining technical experimentation with practical
+              implementation and an exploration of online earning models.
+            </p>
+
+            <div class="skill-list">
+              <span class="skill-tag">Web Development</span>
+              <span class="skill-tag">Cryptocurrency</span>
+              <span class="skill-tag">Experimentation</span>
+            </div>
+
+            <div class="project-footer">WEB TECHNOLOGY</div>
+          </article>
+
+          <!-- GAME DEVELOPMENT -->
+          <article class="project-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+            </div>
+
+            <p class="card-meta">GAME DEVELOPMENT</p>
+            <h3>2D PC & Mobile Game Development</h3>
+
+            <p>
+              Explored the creation of 2D games for PC and mobile
+              platforms, bringing together programming, game mechanics,
+              interactive design, and creative problem-solving.
+            </p>
+
+            <div class="skill-list">
+              <span class="skill-tag">2D Games</span>
+              <span class="skill-tag">PC</span>
+              <span class="skill-tag">Mobile</span>
+              <span class="skill-tag">Game Design</span>
+            </div>
+
+            <div class="project-footer">INTERACTIVE DEVELOPMENT</div>
+          </article>
+
+          <!-- CHATBOTS -->
+          <article class="project-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-comments" aria-hidden="true"></i>
+            </div>
+
+            <p class="card-meta">AUTOMATION / SOFTWARE</p>
+            <h3>Chatbot Projects</h3>
+
+            <p>
+              Explored chatbot development and conversational
+              interactions, combining programming with automation
+              and practical ways to make software more interactive.
+            </p>
+
+            <div class="skill-list">
+              <span class="skill-tag">Chatbots</span>
+              <span class="skill-tag">Automation</span>
+              <span class="skill-tag">Programming</span>
+            </div>
+
+            <div class="project-footer">SOFTWARE EXPERIMENTATION</div>
+          </article>
+
+          <!-- ROBOT CAR -->
+          <article class="project-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-car-side" aria-hidden="true"></i>
+            </div>
+
+            <p class="card-meta">ROBOTICS / HARDWARE</p>
+            <h3>Robot Car</h3>
+
+            <p>
+              Worked on a robot car project exploring the intersection
+              of electronics, hardware, and software in a physical
+              moving system.
+            </p>
+
+            <div class="skill-list">
+              <span class="skill-tag">Robotics</span>
+              <span class="skill-tag">Electronics</span>
+              <span class="skill-tag">Hardware</span>
+              <span class="skill-tag">Automation</span>
+            </div>
+
+            <div class="project-footer">ROBOTICS & ENGINEERING</div>
+          </article>
+
+          <!-- ELECTRONICS -->
+          <article class="project-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+            </div>
+
+            <p class="card-meta">UNIVERSITY / ELECTRONICS</p>
+            <h3>Electronics & Embedded Projects</h3>
+
+            <p>
+              Explored university electronics projects involving RFID,
+              Raspberry Pi, and practical hardware-based systems.
+              These projects connected computing concepts with
+              real-world electronic components.
+            </p>
+
+            <div class="skill-list">
+              <span class="skill-tag">RFID</span>
+              <span class="skill-tag">Raspberry Pi</span>
+              <span class="skill-tag">Electronics</span>
+              <span class="skill-tag">Embedded Systems</span>
+            </div>
+
+            <div class="project-footer">HARDWARE & COMPUTING</div>
+          </article>
+
+          <!-- MANGA ART -->
+          <article class="project-card">
+            <div class="card-icon">
+              <i class="fa-solid fa-palette" aria-hidden="true"></i>
+            </div>
+
+            <p class="card-meta">CREATIVE / DIGITAL ART</p>
+            <h3>Manga Art & Creative Exploration</h3>
+
+            <p>
+              A creative side focused on manga-inspired art and
+              visual expression, bringing together imagination,
+              character-inspired aesthetics, and artistic experimentation.
+            </p>
+
+            <div class="skill-list">
+              <span class="skill-tag">Manga</span>
+              <span class="skill-tag">Art</span>
+              <span class="skill-tag">Creativity</span>
+              <span class="skill-tag">Visual Design</span>
+            </div>
+
+            <div class="project-footer">CREATIVE EXPRESSION</div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 — FIND ME ONLINE -->
+    <section class="section" id="profiles">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-label">// 05 — FIND ME ONLINE</p>
+          <h2 class="section-title">Explore my <span>work.</span></h2>
+          <p class="section-description">
+            Connect with me, explore my code, read my writing,
+            and find my cybersecurity learning profiles.
+          </p>
+        </div>
+
+        <div class="profiles-grid">
+
+          <!-- LINKEDIN -->
+          <a
+            class="profile-link"
+            href="https://lb.linkedin.com/in/abida-adra"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            <span>
+              <strong>LinkedIn</strong>
+              <small>Professional profile</small>
+            </span>
+          </a>
+
+          <!-- GITHUB -->
+          <a
+            class="profile-link"
+            href="https://github.com/abidaadra"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            <span>
+              <strong>GitHub</strong>
+              <small>Code & repositories</small>
+            </span>
+          </a>
+
+          <!-- CODEPEN -->
+          <a
+            class="profile-link"
+            href="https://codepen.io/abidaadra"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-codepen" aria-hidden="true"></i>
+            <span>
+              <strong>CodePen</strong>
+              <small>Web experiments</small>
+            </span>
+          </a>
+
+          <!-- MEDIUM -->
+          <a
+            class="profile-link"
+            href="https://abidaadra.medium.com/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-medium" aria-hidden="true"></i>
+            <span>
+              <strong>Medium</strong>
+              <small>Articles & writing</small>
+            </span>
+          </a>
+
+          <!-- LETSDEFEND -->
+          <a
+            class="profile-link"
+            href="https://app.letsdefend.io/user/abidaadra"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+            <span>
+              <strong>LetsDefend</strong>
+              <small>Blue-team learning</small>
+            </span>
+          </a>
+
+          <!-- CYBERDEFENDERS -->
+          <a
+            class="profile-link"
+            href="https://cyberdefenders.org/p/abidaadra"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-solid fa-user-secret" aria-hidden="true"></i>
+            <span>
+              <strong>CyberDefenders</strong>
+              <small>Cybersecurity labs</small>
+            </span>
+          </a>
+
+          <!-- HACK THE BOX -->
+          <a
+            class="profile-link"
+            href="https://profile.hackthebox.com/profile/019d6784-7bca-7328-a5b5-ce5157bc07e5"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-solid fa-cube" aria-hidden="true"></i>
+            <span>
+              <strong>Hack The Box</strong>
+              <small>Hands-on security</small>
+            </span>
+          </a>
+
+          <!-- TRYHACKME -->
+          <a
+            class="profile-link"
+            href="https://tryhackme.com/p/abidaadra"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-solid fa-flag" aria-hidden="true"></i>
+            <span>
+              <strong>TryHackMe</strong>
+              <small>Labs & learning</small>
+            </span>
+          </a>
+
+          <!-- MOBILE HACKING LAB -->
+          <a
+            class="profile-link"
+            href="https://www.mobilehackinglab.com/u/683e00ec7cbcd8aa"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Visit my Mobile Hacking Lab profile"
+          >
+            <i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i>
+            <span>
+              <strong>Mobile Hacking Lab</strong>
+              <small>Mobile security research</small>
+            </span>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 — BEYOND THE KEYBOARD -->
+    <section class="section" id="interests">
+      <div class="container">
+
+        <div class="section-header">
+          <p class="section-label">// 06 — BEYOND THE KEYBOARD</p>
+          <h2 class="section-title">More than <span>technology.</span></h2>
+          <p class="section-description">
+            A few things I enjoy exploring beyond my technical interests.
+          </p>
+        </div>
+
+        <div class="interests-grid">
+
+          <div class="interest">
+            <i class="fa-solid fa-chess" aria-hidden="true"></i>
+            Chess Player
+          </div>
+
+          <div class="interest">
+            <i class="fa-solid fa-cube" aria-hidden="true"></i>
+            Cuber / Speedcubing
+          </div>
+
+          <div class="interest">
+            <i class="fa-solid fa-gamepad" aria-hidden="true"></i>
+            Gaming
+          </div>
+
+          <div class="interest">
+            <i class="fa-solid fa-palette" aria-hidden="true"></i>
+            Manga Art
+          </div>
+
+          <div class="interest">
+            <i class="fa-solid fa-microchip" aria-hidden="true"></i>
+            Electronics
+          </div>
+
+          <div class="interest">
+            <i class="fa-solid fa-robot" aria-hidden="true"></i>
+            Robotics
+          </div>
+
+          <div class="interest">
+            <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+            Renewable Energy
+          </div>
+
+          <div class="interest">
+            <i class="fa-solid fa-car-side" aria-hidden="true"></i>
+            Electric Vehicles
+          </div>
+
+          <div class="interest">
+            <i class="fa-solid fa-puzzle-piece" aria-hidden="true"></i>
+            Puzzles & Problem-Solving
+          </div>
+
+          <div class="interest">
+            <i class="fa-solid fa-music" aria-hidden="true"></i>
+            Music & EDM
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 — LET'S CONNECT -->
+    <section class="section" id="contact">
+      <div class="container">
+
+        <div class="contact-panel">
+
+          <p class="section-label">// 07 — LET'S CONNECT</p>
+
+          <h2>
+            Have a project in mind?<br>
+            <span class="green">Let's connect.</span>
+          </h2>
+
+          <p>
+            I'm always interested in technology, cybersecurity,
+            creative projects, and opportunities to learn from
+            people who enjoy building and exploring new things.
+            Feel free to reach out through my professional profile.
+          </p>
+
+          <a
+            class="btn btn-primary"
+            href="https://lb.linkedin.com/in/abida-adra"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
+            Connect on LinkedIn
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-inner">
+
+      <p>
+        &copy; <span id="current-year"></span> Abida Adra.
+        Built with curiosity and code.
+      </p>
+
+      <p class="code">
+        <span class="green">&lt;/&gt;</span>
+        Keep learning. Keep building.
+      </p>
+
+    </div>
+  </footer>
+
+  <script>
+    // Automatically update the footer year.
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
